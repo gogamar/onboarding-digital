@@ -1,9 +1,29 @@
+import styled from "styled-components";
+
+const IndicatorContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+`;
+
+const getDotStyles = ({ isActive }) => `
+  height: 0.5rem;
+  width: ${isActive ? "1.5rem" : "0.5rem"};
+  background-color: ${isActive ? "#4B5563" : "#9CA3AF"};
+  border-radius: ${isActive ? "0.375rem" : "50%"};
+`;
+
+const StepIndicatorDot = styled.div`
+  ${getDotStyles}
+`;
+
 export default function StepIndicator({ steps, currentStep }) {
   return (
-    <div className="flex items-center justify-center space-x-2">
+    <IndicatorContainer>
       {steps.map((_, index) => (
-        <div key={index} className={index === currentStep ? "h-2 w-6 bg-gray-600 rounded-lg" : "h-2 w-2 bg-gray-400 rounded-full"} />
+        <StepIndicatorDot key={index} isActive={index === currentStep} />
       ))}
-    </div>
+    </IndicatorContainer>
   );
 }

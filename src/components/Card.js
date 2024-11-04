@@ -5,8 +5,8 @@ import StepIndicator from "./StepIndicator.js";
 export default function Card({ steps, currentStep, prevStep, nextStep }) {
   return (
     <div className="lg:max-w-sm h-screen lg:h-fit lg:my-5 bg-white rounded-3xl shadow flex flex-col">
-      <div className={`${steps[currentStep].bgColor} p-6 rounded-t-3xl h-72 overflow-hidden`}>
-        <img src={steps[currentStep].image} alt={steps[currentStep].title} className="w-full h-full object-contain" />
+      <div className={`${steps[currentStep].bgColor} p-8 rounded-t-3xl h-72 overflow-hidden`}>
+        <img src={steps[currentStep].image} alt={steps[currentStep].title} className="p-8 object-contain" />
       </div>
 
       <div className="flex-grow px-6 pt-6 overflow-y-auto">
