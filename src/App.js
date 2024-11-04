@@ -40,9 +40,13 @@ const App = () => {
     setCurrentStep((prev) => prev - 1);
   };
 
+  const handleStepClick = (index) => {
+    setCurrentStep(index);
+  };
+
   return (
     <div className="bg-gray-200 h-screen flex justify-center items-center">
-      <Card steps={steps} currentStep={currentStep} prevStep={prevStep} nextStep={nextStep} />
+      <Card steps={steps} currentStep={currentStep} prevStep={prevStep} nextStep={nextStep} onDotClick={handleStepClick} />
     </div>
   );
 };

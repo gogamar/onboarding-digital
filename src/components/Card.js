@@ -2,7 +2,7 @@ import ButtonBack from "./ButtonBack.js";
 import ButtonForward from "./ButtonForward.js";
 import StepIndicator from "./StepIndicator.js";
 
-export default function Card({ steps, currentStep, prevStep, nextStep }) {
+export default function Card({ steps, currentStep, prevStep, nextStep, onDotClick }) {
   return (
     <div className="lg:max-w-sm h-screen lg:h-fit lg:my-5 bg-white rounded-3xl shadow flex flex-col">
       <div className={`${steps[currentStep].bgColor} p-8 rounded-t-3xl h-72 overflow-hidden`}>
@@ -15,7 +15,7 @@ export default function Card({ steps, currentStep, prevStep, nextStep }) {
       </div>
 
       <div className="px-6 py-4 flex justify-between items-center border-t border-gray-300">
-        <StepIndicator steps={steps} currentStep={currentStep} />
+        <StepIndicator steps={steps} currentStep={currentStep} onDotClick={onDotClick} />
         <div className="flex gap-2">
           {currentStep > 0 && <ButtonBack onClick={prevStep} />}
           {currentStep < steps.length - 1 && <ButtonForward onClick={nextStep} />}
