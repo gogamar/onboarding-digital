@@ -21,9 +21,15 @@ const App = () => {
 
   const [currentStep, setCurrentStep] = useState(0);
 
+  const nextStep = () => {
+    if (currentStep < tutorialData.length - 1) {
+      setCurrentStep((prev) => prev + 1);
+    }
+  };
+
   return (
     <div className="app">
-      <Card title={tutorialData[currentStep].title} description={tutorialData[currentStep].description} />
+      <Card data={tutorialData[currentStep]} nextStep={nextStep} />
     </div>
   );
 };
