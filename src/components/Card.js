@@ -1,25 +1,24 @@
-import RoundButton from "./RoundButton.js";
+import ButtonBack from "./ButtonBack.js";
+import ButtonForward from "./ButtonForward.js";
 import StepIndicator from "./StepIndicator.js";
 
-export default function Card({ steps, currentStep, nextStep }) {
-  const handleNextStep = () => {
-    if (currentStep < steps.length - 1) {
-      nextStep();
-    }
-  };
+export default function Card({ steps, currentStep, prevStep, nextStep }) {
   return (
-    <div class="lg:max-w-sm h-screen lg:h-full lg:my-5 bg-white rounded-3xl shadow">
-      <div className={`${steps[currentStep].bgColor} p-6 rounded-t-3xl h-96 lg:h-fit overflow-hidden `}>
-        <img src={steps[currentStep].image} alt={steps[currentStep].title} className="p-10" />
+    <div className="lg:max-w-sm h-screen lg:h-fit lg:my-5 bg-white rounded-3xl shadow flex flex-col">
+      <div className={`${steps[currentStep].bgColor} p-6 rounded-t-3xl h-72 overflow-hidden`}>
+        <img src={steps[currentStep].image} alt={steps[currentStep].title} className="w-full h-full object-contain" />
       </div>
 
-      <div class="px-6 pt-6">
+      <div className="flex-grow px-6 pt-6 overflow-y-auto">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-700">{steps[currentStep].title}</h5>
+        <p className="mb-3 text-gray-700">{steps[currentStep].description}</p>
+      </div>
 
-        <p class="mb-3 text-gray-700">{steps[currentStep].description}</p>
-        <div className="flex justify-between my-6 text-sm/6 text-gray-600 xl:mt-10">
-          <StepIndicator steps={steps} currentStep={currentStep} />
-          <RoundButton onClick={handleNextStep} />
+      <div className="px-6 py-4 flex justify-between items-center border-t border-gray-300">
+        <StepIndicator steps={steps} currentStep={currentStep} />
+        <div className="flex gap-2">
+          {currentStep > 0 && <ButtonBack onClick={prevStep} />}
+          {currentStep < steps.length - 1 && <ButtonForward onClick={nextStep} />}
         </div>
       </div>
     </div>

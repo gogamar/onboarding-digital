@@ -33,14 +33,16 @@ const App = () => {
   const [currentStep, setCurrentStep] = useState(0);
 
   const nextStep = () => {
-    if (currentStep < steps.length - 1) {
-      setCurrentStep((prev) => prev + 1);
-    }
+    setCurrentStep((prev) => prev + 1);
+  };
+
+  const prevStep = () => {
+    setCurrentStep((prev) => prev - 1);
   };
 
   return (
-    <div className="bg-gray-200 flex justify-center items-center">
-      <Card steps={steps} currentStep={currentStep} nextStep={nextStep} />
+    <div className="bg-gray-200 h-screen flex justify-center items-center">
+      <Card steps={steps} currentStep={currentStep} prevStep={prevStep} nextStep={nextStep} />
     </div>
   );
 };
