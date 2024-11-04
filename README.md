@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# React Onboarding Tutorial
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the React Onboarding Tutorial project! This application serves as a guided onboarding experience, utilizing React components, hooks, and props to present information to users step-by-step.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+To get started with this project, follow these steps:
 
-### `npm start`
+1. Clone the repository:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   ```bash
+   git clone https://github.com/gogamar/onboarding-digital.git
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Navigate to the project directory:
 
-### `npm test`
+   ```bash
+   cd onboarding-digital
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Install the dependencies:
 
-### `npm run build`
+   ```bash
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Start the application:
+   ```bash
+   npm start
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The application will be running on [http://localhost:3000].
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+This application is structured around a series of exercises, each building on the previous one. Users can navigate through onboarding steps by interacting with buttons that allow them to move forward or backward in the tutorial.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Exercises Overview
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Level 1
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Exercise 1**: Create the initial components for the project.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  - Implement the `Card` component.
+  - Load `Card` within `App`.
+  - Define `tutorialData` array in `App`.
+  - Use `useState` to track the current step.
+  - Pass data to `Card` via props.
 
-## Learn More
+- **Exercise 2**: Allow the application to display all onboarding phrases.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  - Implement `nextStep` function in `App`.
+  - Pass `nextStep` to `Card` via props and call it on button click.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Exercise 3**: Style the `Card` component responsively.
 
-### Code Splitting
+- **Exercise 4**: Implement functionality to go back a step in the tutorial.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  - Create `prevStep` function in `App`.
+  - Use conditional rendering for navigation buttons.
 
-### Analyzing the Bundle Size
+- **Exercise 5**: Implement a step indicator.
+  - Create `Indicator` component.
+  - Pass total steps and current step via props.
+  - Render dynamic indicators using `.map`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Level 2
 
-### Making a Progressive Web App
+- **Exercise 6**: Enable users to click on indicators to show corresponding phrases.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Level 3
 
-### Advanced Configuration
+- **Exercise 7**: Add animation between onboarding steps.
+  - Animate the transition of the `Card` component.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Technologies Used
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **React**: A JavaScript library for building user interfaces.
+- **Create React App**: A boilerplate for setting up new React applications.

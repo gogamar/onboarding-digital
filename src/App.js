@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Card from "./components/Card";
 
-function App() {
+import "./App.css";
+
+const App = () => {
+  const tutorialData = [
+    {
+      title: "Dedica moltes hores",
+      description: "Un mínim de 30 hores a la setmana. Si no en tens prou, hauràs de dedicar-hi més hores. Al principi sembla impossible, però notaràs una millor ràpidament.",
+    },
+    {
+      title: "Programa projectes propis",
+      description: "Més val 10 hores treballant en projectes propis que 10 hores mirant tutorials. La motivació i la implicació en el projecte ajudarà a accelerar el teu aprenentatge.",
+    },
+    {
+      title: "Procura descansar",
+      description: "Descansar bé i desconnectar són vitals. D'aquesta manera reduiràs l'estrès i l'ansietat. Millorarà la teva concentració i consolidaràs el teu aprenentatge.",
+    },
+  ];
+
+  const [currentStep, setCurrentStep] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Card title={tutorialData[currentStep].title} description={tutorialData[currentStep].description} />
     </div>
   );
-}
+};
 
 export default App;
