@@ -77,3 +77,5 @@ This application is structured around a series of exercises, each building on th
 
 - **React**: A JavaScript library for building user interfaces.
 - **Create React App**: A boilerplate for setting up new React applications.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **Styled-Components**: A library for styling React components using tagged template literals.
