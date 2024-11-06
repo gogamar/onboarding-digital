@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ButtonBack from "./ButtonBack.js";
 import ButtonForward from "./ButtonForward.js";
 import StepIndicator from "./StepIndicator.js";
